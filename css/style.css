@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+}
+
+:root {
+  --primary-color: #f7f6e3;
+  --secondary-color: #427d96;
+  --third-color: #469ea6;
+  --fourth-color: #448f80;
+  --fifth-color: #181919;
+  --main-font: 'Poppins', sans-serif;
+  
+  --light-text: rgb(226, 212, 225);
+  --headers: rgb(174, 102, 189);
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 10px;
+}
+
+
+
+.navright ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.navright ul li {
+    margin: 0 5px;
+}
+
+.navright ul li a {
+    text-decoration: none;
+    list-style-type: none;
+}
