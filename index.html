@@ -169,20 +169,24 @@
                         <h2>(573) 555-5555</h2>
                     </div>
                     <div class="contactform">
-                        <form>
-                            <div class="namef">
-                                <label for="namef">Name:</label>
+                        <form class="form">
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
                                 <input type="text" id="name" name="name">
                             </div>
-                            <div class="email">
-                                <label for="email">Email:</label>
+
+                            <div class="form-group">
+                                <label for="email">Email</label>
                                 <input type="email" id="email" name="email">
                             </div>
-                            <div class="phone">
-                                <label for="phone">Phone:</label>
-                                <input type="phone" id="phone" name="phone">
+
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
                             </div>
-                            <div class="servicebox">
+
+                            <div class="form-group">
                                 <label for="package">Choose a Package</label>
                                 <select name="package" id="package">
                                     <option value="">Select a Package</option>
@@ -191,8 +195,11 @@
                                     <option value="premium">Premium</option>
                                 </select>
                             </div>
+
+                            <button type="submit" class="btn form-btn">Submit Request</button>
+
                         </form>
-                    </div>
+                        </div>
                 </div>
             </div>
 
