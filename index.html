@@ -8,10 +8,10 @@
 </head>
 <body>
     <div class="main">
-        <div class="hero">
+        <div class="hero" id="hero">
             <div class="nav">
                 <div class="navleft">
-                    <a href="#"><i class="fa-solid fa-faucet"></i> HydroFix</a>
+                    <a href="#hero"><i class="fa-solid fa-faucet fa-xl"></i> HydroFix</a>
                 </div>
                 <div class="navright">
                     <div class="hamburger" onclick="toggleMenu()">
@@ -21,12 +21,18 @@
                     </div>
                     <div class="mobileMenu" id="mobileMenu">
                         <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Services</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Testimonials</a></li>
-                            <li><a href="#">Packages</a></li>
-                            <li><a href="#">Contact</a></li>
+                            <li><a href="#hero">Home</a></li>
+                            <hr class="divider">
+                            <li><a href="#services">Services</a></li>
+                            <hr class="divider">
+                            <li><a href="#about">About</a></li>
+                            <hr class="divider">
+                            <li><a href="#testimonials">Testimonials</a></li>
+                            <hr class="divider">
+                            <li><a href="#packages">Packages</a></li>
+                            <hr class="divider">
+                            <li><a href="#contact">Contact</a></li>
+                            
                         </ul>
                     </div>
                 </div>
@@ -40,12 +46,12 @@
                     <h3>Fast, Afforable, Professional</h3>
                 </div>
                 <div class="cta">
-                    <a href="./packages.html" class="btn">Book a Service</a>
+                    <a href="#packages" class="btn">Book a Service</a>
                 </div>
             </div>
             </div>
-            <div class="services">
-                <div class="servicescont">
+            <div class="services" id="services">
+                <div class="servicescont reveal">
                     <div class="serviceoff"><i class="fa-solid fa-wrench fa-xl"></i><h2>Pipe Repair</h2></div>
                     <div class="serviceoff"><i class="fa-solid fa-wrench fa-xl"></i><h2>Drain Cleaning</h2></div>
                     <div class="serviceoff"><i class="fa-solid fa-wrench fa-xl"></i><h2>Leak Detection</h2></div>
@@ -56,8 +62,8 @@
 
                 </div>
             </div>
-            <div class="about">
-                <div class="aboutcont">
+            <div class="about" id="about">
+                <div class="aboutcont reveal">
                     <div class="abouttitle">
                         <h2>Why Choose Us?</h2>
                     </div>
@@ -78,12 +84,12 @@
                 </div>
             </div>
 
-            <div class="testimonials">
+            <div class="testimonials" id="testimonials">
                 <div class="testimonials-cont">
                     
                     <h2>What Our Customers Say</h2>
 
-                    <div class="testimonial-card">
+                    <div class="testimonial-card reveal">
                         <p class="review">
                             “Super fast service and very professional. Fixed our leak in no time!”
                         </p>
@@ -92,7 +98,7 @@
                         </div>
                     </div>
 
-                    <div class="testimonial-card">
+                    <div class="testimonial-card reveal">
                         <p class="review">
                             “Affordable and honest. No surprise charges. Highly recommend!”
                         </p>
@@ -101,7 +107,7 @@
                         </div>
                     </div>
 
-                    <div class="testimonial-card">
+                    <div class="testimonial-card reveal">
                         <p class="review">
                             “They showed up same day and got everything working perfectly.”
                         </p>
@@ -114,13 +120,14 @@
             </div>
 
 
-            <div class="packages">
+            <div class="packages" id="packages">
                 <div class="packages-cont">
 
                     <h2>Our Packages</h2>
 
-                    <!-- Card -->
-                    <div class="package-card">
+                    <div class="packages-grid">
+                        <!-- Card -->
+                    <div class="package-card reveal">
                         <h3>Basic</h3>
                         <p class="price">$79</p>
                         <ul>
@@ -128,10 +135,10 @@
                             <li>✔ Minor Leak Check</li>
                             <li>✔ Drain Assessment</li>
                         </ul>
-                        <a href="#" class="btn">Choose Plan</a>
+                        <a href="#contact" class="btn">Choose Plan</a>
                     </div>
 
-                    <div class="package-card featured">
+                    <div class="package-card featured reveal">
                         <h3>Standard</h3>
                         <p class="price">$149</p>
                         <ul>
@@ -140,10 +147,10 @@
                             <li>✔ Water Pressure Check</li>
                             <li>✔ Priority Scheduling</li>
                         </ul>
-                        <a href="#" class="btn">Most Popular</a>
+                        <a href="#contact" class="btn">Most Popular</a>
                     </div>
 
-                    <div class="package-card">
+                    <div class="package-card reveal">
                         <h3>Premium</h3>
                         <p class="price">$249</p>
                         <ul>
@@ -152,48 +159,56 @@
                             <li>✔ Full System Inspection</li>
                             <li>✔ Same-Day Response</li>
                         </ul>
-                        <a href="#" class="btn">Choose Plan</a>
+                        <a href="#contact" class="btn">Choose Plan</a>
                     </div>
+                    </div>
+
+
+                    
 
                 </div>
             </div>
-            <div class="contact">
+            <div class="contact" id="contact">
                 <div class="contactcont">
                     <div class="logocont">
                         <i class="fa-solid fa-faucet fa-2xl"></i><h1>HydroFix</h1>
                     </div>
-                    <div class="contactphonetext">
+                    <div class="contactphonetext reveal">
                         <h2>Call us:</h2>
                     </div>
-                    <div class="contactphone">
+                    <div class="contactphone reveal">
                         <h2>(573) 555-5555</h2>
                     </div>
-                    <div class="contactform">
-                        <form class="form">
+                    <div class="contactform reveal">
+                        <form class="form" id="contactForm">
 
                             <div class="form-group">
                                 <label for="name">Name</label>
-                                <input type="text" id="name" name="name">
+                                <input type="text" id="name" name="name" required>
+                                <small class="error"></small>
                             </div>
 
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" name="email">
+                                <input type="email" id="email" name="email" required>
+                                <small class="error"></small>
                             </div>
 
                             <div class="form-group">
                                 <label for="phone">Phone</label>
-                                <input type="tel" id="phone" name="phone">
+                                <input type="tel" id="phone" name="phone" required>
+                                <small class="error"></small>
                             </div>
 
                             <div class="form-group">
                                 <label for="package">Choose a Package</label>
-                                <select name="package" id="package">
+                                <select name="package" id="package" required>
                                     <option value="">Select a Package</option>
                                     <option value="basic">Basic</option>
                                     <option value="standard">Standard</option>
                                     <option value="premium">Premium</option>
                                 </select>
+                                <small class="error"></small>
                             </div>
 
                             <button type="submit" class="btn form-btn">Submit Request</button>
@@ -201,25 +216,170 @@
                         </form>
                         </div>
                 </div>
+                <div class="popup" id="popup">
+                    <p>✔ Thank you! Your request has been recieved.</p>
+                </div>
             </div>
-
+            <div class="footer">
+                <div class="footercont">
+                    <div class="footerleft">
+                        <div class="footernav">
+                            <ul>
+                                <li><a href="#hero">Home</a></li>
+                                <li><a href="#services">Services</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#testimonials">Testimonials</a></li>
+                                <li><a href="#packages">Packages</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footerright">
+                        <div class="footerlogo"><a href="#hero"><i class="fa-solid fa-faucet fa-xl"></i> HydroFix</a></div>
+                        <div class="footersocials">
+                            <i class="fa-brands fa-facebook fa-2xl"></i>
+                            <i class="fa-brands fa-x-twitter fa-2xl"></i>
+                            <i class="fa-brands fa-instagram fa-2xl"></i>
+                            <i class="fa-brands fa-youtube fa-2xl"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="disc">
+                    © 2026 HydroFix. All rights reserved.
+                </div>
+            </div>
         </div>
     </div>
 
 
     <!--hamburger menu-->
     <script>
-function toggleMenu() {
-    const hamburger = document.querySelector(".hamburger");
-    const menu = document.getElementById("mobileMenu");
+document.addEventListener("DOMContentLoaded", () => {
 
-    hamburger.classList.toggle("active");
-    menu.classList.toggle("active");
-}
+  const menu = document.getElementById("mobileMenu");
+  const hamburger = document.querySelector(".hamburger");
+
+  function openMenu() {
+    menu.classList.add("active");
+    hamburger.classList.add("active");
+  }
+
+  function closeMenu() {
+    menu.classList.remove("active");
+    hamburger.classList.remove("active");
+  }
+
+  function toggleMenu() {
+    if (menu.classList.contains("active")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  // attach toggle to hamburger (IMPORTANT if inline onclick ever breaks)
+  hamburger.addEventListener("click", toggleMenu);
+
+  // close on scroll
+  window.addEventListener("scroll", closeMenu);
+
+  // close on link click
+  document.querySelectorAll(".mobileMenu a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+});
 </script>
 
 <!--font awesome-->
 <script src="https://kit.fontawesome.com/6065ca2d33.js" crossorigin="anonymous"></script>
 
+
+<!--popup-->
+<script>
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  let isValid = true;
+
+  // Get fields
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const phone = document.getElementById("phone");
+  const packageSelect = document.getElementById("package");
+
+  // Clear previous errors
+  document.querySelectorAll(".error").forEach(el => el.textContent = "");
+  document.querySelectorAll("input, select").forEach(el => el.classList.remove("error-border"));
+
+  // Name validation
+  if (name.value.trim() === "") {
+    setError(name, "Name is required");
+    isValid = false;
+  }
+
+  // Email validation
+  if (!validateEmail(email.value)) {
+    setError(email, "Enter a valid email");
+    isValid = false;
+  }
+
+  // Phone validation (basic)
+  if (phone.value.trim().length < 10) {
+    setError(phone, "Enter a valid phone number");
+    isValid = false;
+  }
+
+  // Package validation
+  if (packageSelect.value === "") {
+    setError(packageSelect, "Please select a package");
+    isValid = false;
+  }
+
+  // If valid → show popup
+  if (isValid) {
+    const popup = document.getElementById("popup");
+    popup.classList.add("show");
+
+    setTimeout(() => {
+      popup.classList.remove("show");
+    }, 3000);
+
+    form.reset();
+  }
+});
+
+// Helper functions
+function setError(input, message) {
+  const error = input.nextElementSibling;
+  error.textContent = message;
+  input.classList.add("error-border");
+}
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+</script>
+
+<!--slide in-->
+<script>
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+reveals.forEach(reveal => {
+    observer.observe(reveal);
+});
+</script>
 </body>
 </html>

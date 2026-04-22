@@ -33,6 +33,13 @@ body {
   --headers: rgb(174, 102, 189);
 }
 
+.divider {
+  border: none;
+  height: 2px;
+  background-color: var(--third-color);
+  margin:  0;
+}
+
 .nav {
     display: flex;
     flex-direction: row-reverse;
@@ -57,7 +64,7 @@ body {
 
 .hamburger {
     display: flex;
-    position: absolute;
+    position: fixed;
     left: 20px;
     flex-direction: column;
     justify-content: space-between;
@@ -89,18 +96,26 @@ body {
 }
 
 .mobileMenu {
-    display: none;
-    position: absolute;
-    top: 0px;
+    position: fixed;
+    top: 0;
     left: 0;
     width: 100%;
+    height: 100vh;
+
     background-color: var(--primary-color);
     text-align: center;
+
     z-index: 1000;
-    padding-top: 12px;
+
+    padding-top: 80px;
+
     color: var(--third-color);
-    font-family: "Lora", serif;
+    font-weight: 500;
     font-size: 20px;
+
+    
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
 }
 
 .mobileMenu ul {
@@ -110,6 +125,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    height: 100%;
+    justify-content: center;
 }
 
 .mobileMenu ul li a {
@@ -117,10 +134,23 @@ body {
     display: block;
     text-decoration: none;
     color: var(--text-color);
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .mobileMenu.active {
-    display: block;
+    transform: translateY(0);
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .hero {
@@ -141,7 +171,7 @@ body {
   position: absolute;
   inset: 0;
   background: rgba(255, 255, 255, 0.5); /* faded look */
-  transition: opacity 0.4s ease;
+  
   z-index: 1;
 }
 
@@ -273,6 +303,7 @@ body {
   gap: 10px;
   margin: 8px 0;
   width: 100%;
+  color: var(--third-color);
 }
 
 .bulletpoint i {
@@ -466,19 +497,78 @@ label {
   text-align: center;
 }
 
+.popup {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  background: var(--third-color);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* visible state */
+.popup.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+input.error-border, select.error-border {
+  border-color: red;
+}
+
+.footer {
+  background-color: var(--fifth-color);
+  color: var(--primary-color);
+}
+
+.footercont {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 20px;
+}
+
+.footerlogo {
+  font-size: larger;
+}
+
+.footerlogo a {
+  text-decoration: none;
+}
+
+.footersocials {
+  margin: 10px 0;
+}
+
+.disc {
+  text-align: center;
+  font-size: small;
+}
+
+.footernav ul li a {
+  color: var(--primary-color);
+}
+
+.footernav ul {
+  list-style-type: none;
+}
+
 
 /* tablet */
 
 @media (min-width: 768px) {
-  .testimonials-cont {
-    max-width: 900px;
-  }
-
-  .testimonials-cont {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
+  
 
 
 }
@@ -486,10 +576,43 @@ label {
 /* desktop */
 
 @media (min-width: 1024px) {
-  
-  nav {
-    flex-direction: row;
+
+  .hamburger {
+    display: none;
   }
+
+  .mobileMenu {
+    position: static;
+    transform: none;
+    height: auto;
+    width: auto;
+    background: none;
+    padding-top: 0;
+  }
+
+  .mobileMenu ul {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    height: auto;
+  }
+
+  .mobileMenu ul li a {
+    font-size: 16px;
+    color: var(--fifth-color);
+  }
+
+  .divider {
+    display: none;
+  }
+  
+  .nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 
 
   .navright ul {
@@ -509,13 +632,43 @@ label {
  
   /* Hover effect */
 .hero:hover::before {
-  opacity: 0; /* reveals full background */
+  opacity: unset; /* reveals full background */
 }
+
+.testimonials-cont {
+  max-width: 600px;
+  width: 100%;
+}
+
+.packages-cont {
+    text-align: center;
+    max-width: 750px;
+  }
+
+  .packages-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .package-card {
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .featured {
+    transform: scale(1.08);
+    z-index: 2;
+  }
 
 }
 
 /* 4k */
 
 @media (min-width: 2560px) {
-  
+   body {
+    max-width: 1440px;
+    margin: 0 auto;
+    background-color: var(--fifth-color);
+   }
 }
